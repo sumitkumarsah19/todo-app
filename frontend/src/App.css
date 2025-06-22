@@ -1,0 +1,166 @@
+/* Reset default styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling for overall layout */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #bfeae4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main container for the todo app */
+.todo-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Heading styling */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* Input form styling */
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+input[type="text"],
+textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Add todo button */
+.add-btn {
+  background-color: #4a90e2;
+   justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #357abd;
+}
+
+/* Todo list styling */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual todo item */
+.todo-item {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+
+  border-left: 4px solid #4a90e2;
+  transition: transform 0.2s ease;
+}
+
+.todo-item.completed {
+  border-left-color: #28a745;
+  background-color: #e6f4e6;
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Todo content */
+.todo-content {
+  flex-grow: 1;
+  margin-right: 15px;
+}
+
+.todo-content h3 {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.todo-content p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Mark as complete button */
+.complete-btn {
+  background-color: #4a90e2;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.complete-btn:active {
+  background-color: #1e7e34; /* even darker green on press */
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .todo-container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input[type="text"],
+  textarea {
+    font-size: 0.9rem;
+  }
+
+  .add-btn,
+  .complete-btn {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
